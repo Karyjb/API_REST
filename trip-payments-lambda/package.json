@@ -1,0 +1,23 @@
+{
+  "name": "trip-payments-lambda",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "repack-zip"
+  },
+  "dependencies": {
+    "@aws-sdk/client-dynamodb": "^3.496.0",
+    "@aws-sdk/lib-dynamodb": "^3.496.0",
+    "aws-sdk": "^2.1555.0",
+    "repack-zip": "^0.2.8",
+    "uuid": "^9.0.1",
+    "uuid-v9": "^0.2.0",
+    "uuid.v4": "^1.0.0"
+  },
+  "devDependencies": {
+    "repack-zip": "^0.2.8"
+  },
+  "type": "module"
+}
