@@ -10,19 +10,18 @@ import {
   DeleteCommand,
 } from "@aws-sdk/lib-dynamodb";
 
-
-console.log("Hello people");
-
 const require = createRequire(import.meta.url);
 
 const { v4: uuidv4 } = require("uuid");
 
+/** Datos de la conexión de db */
 const client = new DynamoDBClient({});
 
 const dynamo = DynamoDBDocumentClient.from(client);
 
 const tableName = "trip-payments";
 
+//Crear Handler para manejar los eventos
 export const handler = async (event, context) => {
   let body;
   let statusCode = 200;
@@ -30,13 +29,13 @@ export const handler = async (event, context) => {
     "Content-Type": "application/json",
   };
   try {
-    console.log("event: ", event);
+    //console.log("event: ", event);
     event = JSON.parse(event.body);
-    console.log("event: ", event);
-    console.log("event.routeKey", event.routeKey);
+    // console.log("event: ", event);
+    // console.log("event.routeKey", event.routeKey);
     const requestJSON = JSON.parse(event.body);
-    console.log("requestJSON: ", requestJSON);
-    console.log("switch", event.routeKey);
+    // console.log("requestJSON: ", requestJSON);
+    // console.log("switch", event.routeKey);
     switch (event.routeKey) {
       case "DELETE /payments/{id}":
         console.log("DELETE /payments/{id}");
